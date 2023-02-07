@@ -13,4 +13,11 @@ interface MovieApi {
             "api_key"
         ) apiKey: String
     ): Response<MovieList>
+
+    @GET("movie/now_playing")
+    suspend fun getNowPlaying(
+        @Query(
+            "api_key"
+        ) apiKey: String
+    ): Response<MovieList>
 }

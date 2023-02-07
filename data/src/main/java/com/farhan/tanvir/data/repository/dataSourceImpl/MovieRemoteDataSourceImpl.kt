@@ -6,5 +6,6 @@ import com.farhan.tanvir.data.repository.dataSource.MovieRemoteDataSource
 
 class MovieRemoteDataSourceImpl(private val movieApi: MovieApi):MovieRemoteDataSource {
     override suspend fun getPopularMovies()= movieApi.getPopularMovies(BuildConfig.API_KEY)
+    override suspend fun getNowPlaying()= movieApi.getNowPlaying(BuildConfig.API_KEY)
 
 }

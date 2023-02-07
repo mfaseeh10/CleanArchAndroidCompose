@@ -9,6 +9,7 @@ import retrofit2.Response
 class MovieRepositoryImpl(private val movieRemoteDataSource: MovieRemoteDataSource) :
     MovieRepository {
     override suspend fun getPopularMovies() = responseToRequest(movieRemoteDataSource.getPopularMovies())
+    override suspend fun getNowPlaying() = responseToRequest(movieRemoteDataSource.getNowPlaying())
 
     private fun responseToRequest(response: Response<MovieList>):Result<MovieList>{
         if(response.isSuccessful){

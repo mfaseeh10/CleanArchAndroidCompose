@@ -1,6 +1,7 @@
 package com.farhan.tanvir.androidcleanarchitecture.di
 
 import com.farhan.tanvir.domain.repository.MovieRepository
+import com.farhan.tanvir.domain.useCase.GetNowPlayingUseCase
 import com.farhan.tanvir.domain.useCase.GetPopularMoviesUseCase
 import dagger.Module
 import dagger.Provides
@@ -13,4 +14,8 @@ object UseCaseModule {
     @Provides
     fun provideGetPopularMoviesUseCase(movieRepository: MovieRepository) =
        GetPopularMoviesUseCase(movieRepository)
+
+    @Provides
+    fun provideGetNowPlayingUseCase(movieRepository: MovieRepository) =
+       GetNowPlayingUseCase(movieRepository)
 }
